@@ -19,6 +19,16 @@ const typeDefs = gql`
     user(id: ID!): User
     company(id: ID!): Company
   }
+
+  type Mutation {
+    addUser(user: UserInput): User
+  }
+
+  input UserInput {
+    firstName: String!
+    age: Int!
+    companyId: ID
+  }
 `
 
 module.exports = typeDefs

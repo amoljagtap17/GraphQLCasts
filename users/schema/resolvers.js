@@ -26,6 +26,13 @@ const resolvers = {
 
       return response.data
     }
+  },
+  Mutation: {
+    addUser: async (parent, args, context, info) => {
+      const response = await axios.post(`/users`, args.user)
+      console.log('args', response.data)
+      return response.data
+    }
   }
 }
 
