@@ -30,7 +30,18 @@ const resolvers = {
   Mutation: {
     addUser: async (parent, args, context, info) => {
       const response = await axios.post(`/users`, args.user)
-      console.log('args', response.data)
+
+      return response.data
+    },
+    deleteUser: async (parent, args, context, info) => {
+      const response = await axios.delete(`/users/${args.userId}`)
+
+      return response.data
+    },
+    editUser: async (parent, args, context, info) => {
+      // patch ignores the id in args object
+      const response = await axios.patch(`/users/${args.id}`, args)
+
       return response.data
     }
   }
