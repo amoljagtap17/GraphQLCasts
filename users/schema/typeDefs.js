@@ -12,6 +12,7 @@ const typeDefs = gql`
     id: ID
     name: String
     description: String
+    users: [User]
   }
 
   type Query {
