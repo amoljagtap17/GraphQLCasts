@@ -7,6 +7,13 @@ const resolvers = {
 
       return response.data
     }
+  },
+  User: {
+    async company(user) {
+      const response = await axios.get(`/companies/${user.companyId}`)
+
+      return response.data
+    }
   }
 }
 

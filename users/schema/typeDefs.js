@@ -5,6 +5,13 @@ const typeDefs = gql`
     id: ID
     firstName: String
     age: Int
+    company: Company
+  }
+
+  type Company {
+    id: ID
+    name: String
+    description: String
   }
 
   type Query {
