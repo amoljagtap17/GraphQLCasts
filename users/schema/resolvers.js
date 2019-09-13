@@ -6,6 +6,11 @@ const resolvers = {
       const response = await axios.get(`/users/${args.id}`)
 
       return response.data
+    },
+    company: async (parent, args, context, info) => {
+      const response = await axios.get(`/companies/${args.id}`)
+
+      return response.data
     }
   },
   User: {
